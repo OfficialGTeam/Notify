@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  notify_spring_service:
+    container_name: Notify_Spring_Service
+    build: ./Notify-Backend
+    volumes:
+      - "./:/usr/src/app"
+    ports:
+      - "4200:80"
+  notify_angular_service:
+    container_name: Notify_Angular_Service
+    build: ./Notify-Frontend
+    volumes:
+      - "./:/usr/src/app"
+    ports:
+      - "4200:80"
